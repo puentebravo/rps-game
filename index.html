@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <script>
+      //Prompt the user to enter a value of rock, paper, or scissors.
+      var rps = ["r", "p", "s"];
+      var gameLength = 10;
+      var userScore = 0;
+      var tronScore = 0;
+      var tieScore = 0;
+
+      alert("Game Time!");
+
+      for (i = 0; i < gameLength; i++) {
+        var userPrompt = prompt(
+          "Rock, paper, or scissor? Type r, p, or s to play."
+        );
+        var tron = rps[Math.floor(Math.random() * rps.length)];
+        alert("Tron chose " + tron);
+        if (
+          (userPrompt === rps[0] && tron === rps[2]) ||
+          (userPrompt === rps[1] && tron === rps[0]) ||
+          (userPrompt === rps[2] && tron === rps[1])
+        ) {
+          alert("User wins");
+          userScore++;
+        } else if (userPrompt === tron) {
+          alert("Tie Game");
+          tieScore++;
+        } else {
+          alert("Tron wins... USER.");
+          tronScore++;
+        }
+        alert("Current score: " + userScore + "," + tronScore);
+      }
+
+      alert("Final score:");
+      alert("User has won... " + userScore + " times. Hmm.");
+      alert(
+        "Tron has won..." + tronScore + " times. Clearly, a superior being."
+      );
+      alert(
+        "There were..." +
+          tieScore +
+          "unresolved rounds. An interesting development."
+      );
+    </script>
+  </body>
+</html>
